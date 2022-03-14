@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="BlackjackStyle.css">
+</head>
+<body>
+    <header class="header">
+      <audio src="/Extra/BlackjackMusic.mp3" autoplay loop></audio>
+        <h1>
+            Basic Gambling Site
+        </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Blackjack.html">Blackjack</a>
+            <a href="Roulette.html">Roulette</a>
+            <a href="Slot.html">Slot</a>           
+            <a href="Dice.html">Dice</a>
+        </nav>
+    </header>
+    <div id="table">
+        <div id="dealer-score" class="score">Dealer score: <span>0</span></div>
+        <div id="deck">
+          <div class="back"></div>
+        </div>
+        <div class="container" id="dealer">
+        </div>
+        <div class="border-line"></div>
+        <div id="player-score" class="score">Your score: <span>0</span></div>
+        <div class="container" id="player">
+        </div>
+      </div>
+      <div id="panel">
+        <div id="status">Press Deal to start game</div>
+        <button id="deal" class="blue" type="button">DEAL</button>
+        <button id="hit" class="green" type="button" disabled>HIT</button>
+        <button id="stand" class="red" type="button" disabled>STAND</button>
+          <div class="Money">Money: 100 $</div>
+          <div class="TimesWon">TimesWon: 0</div>
+          <div class="TimesLost">TimesLost: 0</div>
+      </div>
+
+      <script type="text/javascript" src="Blackjack.js"></script>
+      <script type="text/javascript">
+        BlackjackJS.init();
+      </script>
+</body>
+</html>

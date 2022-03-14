@@ -1,0 +1,355 @@
+/*-----------------------*/
+/*       Blackjack       */
+/*-----------------------*/
+
+html {
+    height: 100%;
+  }
+  
+  body {
+    background-image: url("Extra/blackjackpic.jpg"); 
+    min-height: 100%;
+  }
+  
+  #table {
+    position: relative;
+    padding-top: 20px;
+  }
+  
+  #dealer{
+    box-sizing: border-box;
+    padding-left:154px;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 214px;
+    position: relative;
+    width:100%;
+  }
+  
+  #deck{
+    top:55px;
+    left:15px;
+    z-index: 10;
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    border-radius: 5px;
+    padding:2px;
+    background-color: #F6F7EB;
+    display: block;
+    -webkit-box-shadow: 2px -2px 9px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 2px -2px 9px -1px rgba(0,0,0,1);
+    box-shadow: 2px -2px 9px -1px rgba(0,0,0,1);
+  }
+  
+  .card {
+    font-family: 'Arbutus Slab', serif;
+    position: relative;
+    width: 120px;
+    height: 180px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 28px;
+    padding:2px;
+    background-color: #F6F7EB;
+    display: flex;
+    -webkit-box-shadow: 2px -2px 9px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 2px -2px 9px -1px rgba(0,0,0,1);
+    box-shadow: 2px -2px 9px -1px rgba(0,0,0,1);
+    margin:15px;
+  }
+  
+  .back {
+    background: #36c;
+    background:
+    linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+    linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+    linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+    linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+    #36c;
+    background-size: 15px 30px;
+    width:96%;
+    height: 98%;
+    margin: 1% auto;
+    border-radius: 5px;
+  }
+  
+  .diamonds, .hearts {
+    color:#E94F37;
+  }
+  
+  .spades, .clubs {
+    color:#393E41;
+  }
+  
+  .rank {
+    position: absolute;
+    width:30px;
+    height: 28px;
+  }
+  
+  .top {
+    top: 2px;
+    left: 2px;
+  }
+  
+  .bottom {
+    bottom:0;
+    right: 2px;
+    text-align: right;
+  }
+  
+  .suit {
+    margin:auto;
+    font-size: 60px;
+  }
+  
+  .border-line {
+    border:4px dashed #F6F7EB;
+    opacity: 0.4;
+    margin: 20px 0;
+  }
+  
+  .score {
+    position: relative;
+    text-align: center;
+    font-family: Gill Sans;
+    color: #F6F7EB;
+    opacity: 0.7;
+    font-size: 20px;
+    z-index:10;
+    text-shadow: 1px 1px 2px rgba(10, 10, 10, 1);
+  }
+  
+  #panel {
+    background-color: #40434E;
+    border-top: 1px solid #070707;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr  0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    
+  }
+
+
+.Money {    
+  grid-column-start: 1;
+  grid-row-start: 1;
+  display: grid;
+  justify-content: center;
+  margin-top: 5%;
+  color: #55ee95;
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.TimesWon {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  justify-content: center;
+  margin-top: 15%;
+  color: #3cc1e2;
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.TimesLost {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  display: grid;
+  justify-content: center;
+  margin-top: 5%;
+  color: #cc5858;
+  opacity: 0.7;
+  font-size: 20px;
+}
+  
+  #status {
+    font-family: Gill Sans;
+    text-shadow: 1px 1px 2px rgba(10, 10, 10, 1);
+    grid-column-start: 5;
+    grid-row-start: 1;
+    display: grid;
+    justify-content: center;
+    color: #55acee;
+    position: relative;
+    opacity: 0.7;
+    font-size: 20px;
+  }
+  
+  button {
+    border:none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+    color: #F6F7EB;
+    position: relative;
+    display: inline-block;
+    font-family: Gill Sans;
+    text-shadow: 1px 1px 2px rgba(10, 10, 10, 1);
+  }
+  
+  button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px .5px 0px 0px;
+  }
+  
+  .blue {
+    background-color: #55acee;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+    grid-column-start: 4;
+    grid-row-start: 2;
+  }
+  
+  .blue:hover {
+    background-color: #6FC6FF;
+  }
+  
+  .green {
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+    grid-column-start: 5;
+    grid-row-start: 2;
+  }
+  
+  .green:hover {
+    background-color: #48E68B;
+  }
+  
+  .red {
+    background-color: #e74c3c;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+    grid-column-start: 6;
+    grid-row-start: 2;
+  }
+  
+  .red:hover {
+    background-color: #FF6656;
+  }
+  
+  button:disabled {
+    background-color: #999;
+    box-shadow: 0px 5px 0px 0px #AAA;
+  }
+  
+  button:disabled:hover {
+    background-color: #999;
+  }
+  
+  button:disabled:active {
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    box-shadow: 0px 5px 0px 0px #AAA;
+  }
+
+
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-----------------------*/
+/* Bar on top of website */
+/*-----------------------*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --header-height: 55px;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(#21571c, #406e15);
+    box-shadow: 0 1px 10px 0 rgb(185, 255, 183);
+    height: var(--header-height);
+  }
+
+.header h1 {
+   color: rgb(255, 255, 255);
+   top: 0;
+   margin-left: 3vmax;
+   text-transform:capitalize;
+   font-size: 1.8vmax;
+}
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+ 
+ a {
+     color: rgb(252, 252, 252);
+     display: inline-block;
+     text-decoration: none;
+     background-color:#127e12;
+     padding: 1.5vh;
+     border-bottom-right-radius: 10px;
+     border-bottom-left-radius: 10px;
+     margin-right: 0.4rem;
+     font-size: 1.2vmax;
+ }
+ a:hover {
+     color: rgb(255, 255, 255);
+     background-color: #11c046;
+ }

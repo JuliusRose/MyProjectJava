@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="SlotStyle.css">
+    <script defer src="Slot.js"></script>
+</head>
+<body>
+    <header class="header">
+        <audio src="/Extra/SlotMusic.mp3" autoplay loop></audio>
+        <h1>
+            Basic Gambling Site
+        </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Blackjack.html">Blackjack</a>
+            <a href="Roulette.html">Roulette</a>
+            <a href="Slot.html">Slot</a>           
+            <a href="Dice.html">Dice</a>
+        </nav>
+    </header>
+<div class="BodyGrid">
+    <div class="container01">
+        <div class="slot-wrapper">
+            <img class="shake" id="die-1">
+            <img class="shake" id="die-2">
+            <img class="shake" id="die-3">
+        </div>
+        <p id="total"></p>
+        <button onclick="roll()">Click!</button>
+    </div>
+  <div class="container02">
+    <div class="box-wrapper">
+        <h1>
+            <u>Statistics:</u>
+        </h1>
+        <div class="Money">Money: 100 $</div>
+        <div class="TimesWon">TimesWon: 0</div>
+        <div class="TimesLost">TimesLost: 0</div>
+        <h1>
+            <u>Values:</u>
+        </h1>
+        <p>Win:   1000x</p>
+        <p>Semi-Win: 10x</p>
+        <p>Lose:      0.1x</p>
+    </div> 
+</div>
+  </div>
+</body>
+</html>
