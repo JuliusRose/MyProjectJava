@@ -130,7 +130,7 @@ button{
 
  .header {
      display: grid;
-     
+     grid-template-rows: 1fr 1fr;
      position: sticky;
      top: 0;
      background: linear-gradient(#9b0814, #ff4039);
