@@ -9,6 +9,7 @@
 }
 body{
     height: 100vh;
+    width: 100vw;
     background-image: url("Extra/Beach-tree.jpg"); 
 } 
 
@@ -16,8 +17,9 @@ body{
     display: grid;
     grid-template-columns: 1fr 0.57fr 1fr;
     grid-template-rows: 1.17fr 2fr 1.4fr;
-    gap: 50px;
+    gap: 5rem;
     height: 92vh;
+    width: 100vw;
 }
 
  .container01{
@@ -127,9 +129,8 @@ button{
    }
 
  .header {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
+     display: grid;
+     
      position: sticky;
      top: 0;
      background: linear-gradient(#9b0814, #ff4039);
